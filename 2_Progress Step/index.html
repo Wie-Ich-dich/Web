@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>步骤器</title>
+</head>
+<body>
+    <!-- 最外层一个容器装按钮和进度条 -->
+    <div class="container"> 
+        <!-- 第二级容器装四个步骤 -->
+        <div class="progressContainer">
+            <!-- 进度条线的实现是通过一个div设置它的宽度动态改变，bkgroundcolor设置成蓝色即可 -->
+            <div class="progress" id="progress"></div>
+            <!-- 四个小圆圈步骤，圆角设置成50%就好，然后利用after伪类 -->
+            <div class="circle active">1</div>
+            <div class="circle">2</div>
+            <div class="circle">3</div>
+            <div class="circle">4</div>
+        </div>
+        <button id="prev" class="btn" disabled >Prev</button>
+        <button id="next" class="btn">Next</button>
+    </div>
+    <script src="./script.js"></script>
+    </body>
+</html>
