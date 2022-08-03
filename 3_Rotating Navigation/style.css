@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #333;
+    color: #222;
+    margin: 0px;
+}
+
+.container {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #fafafa;  
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+    padding: 50px;
+}
+
+.container.show-nav {
+    transform: rotate(-20deg);
+}
+
+.circle-container {
+    position: fixed;    /*设置成fixed之后元素是相对于浏览器窗口来进行定位的*/
+    top: -100px;
+    left: -100px;
+}
+
+
+.circle {
+    background-color: #ff7979;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.5s linear;
+}
+
+.container.show-nav .circle {
+    /*父元素旋转，子元素也会跟着旋转，所以90-20；默认旋转中心为元素中心上下左右50%*/
+    transform: rotate(-70deg);  
+}
+
+.circle button{
+    cursor: pointer;
+    position: absolute;
+    height: 100px;
+    border: 0;
+    background: transparent;
+    font-size: 26px;
+    color: #fff;
+}
+
+.circle button:focus {
+    outline: none;
+}
+
+.circle button#open {
+    top: 50%;
+    left: 60%;
+}
+
+.circle button#close {
+    top:10%;
+    transform-origin: bottom left;
+    transform: rotate(90deg);
+}
+
+.container.show-nav+nav li {
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
+nav {
+    position: fixed;
+    left: 0px;
+    bottom: 40px;
+
+}
+
+nav ul {
+    /* background-color: blue; 调试用*/
+    list-style-type: none;
+    padding-left: 30px;
+}
+
+nav ul li {
+    text-transform: uppercase;
+    color: #fff;
+    margin: 40px 0;
+    transform: translateX(-100%);
+    transition: transform 0.8s ease-in;
+}
+
+nav ul li i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+nav ul li+li {
+    margin-left: 15px;
+    transform: translateX(-150%);
+    transition: transform 0.6s ease-in;
+}
+
+nav ul li+li+li {
+    margin-left: 30px;
+    transform: translateX(-200%);
+    transition: transform 0.4s ease-in;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.content h1 {
+    margin: 0;
+}
+
+.content small {
+    color: #555;
+    font-style: italic;
+}
+
+.content p {
+    color: #333;
+    line-height: 1.5;
+}
+
+.content img {
+    max-width: 100%;
+}
