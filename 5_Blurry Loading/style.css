@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.bg {
+    background: no-repeat center center/cover;
+    height: calc(100vh + 60px);
+    width: calc(100vw + 60px);
+    position: absolute; /*可以把这个元素从flex分布中剥离出来*/
+    top: -30px; /*这两个位置估计是根据图片显示效果调整的，可以不加，然后上面的宽高也作相应更改即可*/
+    left: -30px;
+    z-index: -1;
+    filter: blur(0);/*blur函数接收一个像素值，0-30px效果较好，不至于完全看不清又达到了blur的效果*/
+}
+
+.loading-text {
+    font-size: 50px;
+    color: #fff;
+    opacity: 1;
+}
