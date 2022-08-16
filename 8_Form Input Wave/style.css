@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: steelblue;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    padding: 20px 40px;
+    color: #fff;
+}
+
+.container h1.title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container .form-control {
+    position: relative;
+    margin: 20px 0 40px;
+    width: 300px;
+}
+.form-control input{
+    background-color: transparent;
+    border: 0px;
+    border-bottom: 2px #fff solid;
+    /* 
+        inline元素不换行，宽高随自身变化，不可调；
+        block元素每个占一行，可调宽高；
+        inline-block不换行，可调宽高；
+    */
+    display: block;
+    padding: 15px 0;
+    width: 100%;
+    font-size: 18px;
+    color: #fff;
+}
+.form-control input:focus,
+.form-control input:valid {
+    outline: none;
+    border-bottom-color: lightblue;
+}
+
+.form-control label {
+    position: absolute;
+    top: 15px;
+    left: 0px;
+}
+.form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.form-control input:focus+label span,
+.form-control input:valid+label span {
+    color: lightblue;
+    transform: translateY(-30px);
+
+}
+
+.container .btn {
+    width: 100%;
+    background-color: lightblue;
+    padding: 15px 0px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;  /*这句貌似没有用*/
+    border: 0px;
+    border-radius: 5px;
+}
+.container .btn:focus {
+    outline: none;
+}
+.container .btn:active {
+    transform: scale(0.98);
+}
+
+.container p a {
+    text-decoration: none;
+    color: lightblue;
+}
+.container .text {
+    margin-top: 30px;
+}
+
