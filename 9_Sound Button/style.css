@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(161, 100, 223);
+    text-align: center;
+}
+
+#buttons .btn {
+    background-color: rebeccapurple;
+    border-radius: 5px;
+    padding: 1.5rem 3rem;
+    margin: 1rem;
+    color: #fff;
+    border: 0px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+#buttons .btn:focus {
+    outline: none;
+}
+#buttons .btn:hover {
+    opacity: 0.9;
+}
+
+
