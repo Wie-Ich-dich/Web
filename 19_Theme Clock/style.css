@@ -1,0 +1,103 @@
+* {
+    box-sizing: content-box;
+}
+:root {
+    --primary-color:#000;
+    --secondary-color:#fff;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 8px 12px;
+    border: 0px;
+    border-radius: 4px;
+}
+.toggle:focus {
+    outline: none;
+}
+
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clock {
+    position: relative;
+    height: 200px;
+    width: 200px;
+}
+
+.needle {
+    background-color: var(--primary-color);
+    height: 65px;
+    width: 3px;
+    border-radius: 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: center top;
+    transition: all 0.5s ease-in;
+}
+
+.needle.hour {
+    transform: rotate(0deg);
+}
+.needle.minute {
+    transform: rotate(90deg);
+    height: 100px;
+}
+.needle.second {
+    transform: rotate(45deg);
+    height: 100px;
+    background-color: #e74c3c;
+}
+.center-point {
+    background-color: var(--primary-color);
+    width: 5px;
+    height: 5px;
+    border: 2.5px solid #e74c3c;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
+
+.time {
+    font-size: 60px;
+}
+
+.date {
+    color: #aaa;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+.date .circle {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 18px;
+    transition: all 0.5s ease-in;
+}
