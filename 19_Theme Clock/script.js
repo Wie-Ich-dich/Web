@@ -24,15 +24,33 @@ function setTime(){
     const day=time.getDay();
     const date=time.getDate();
     const hh=time.getHours();
+    const clockhh=hh%12;
     const ampm=hh>12?'PM.':'AM.';
     const mm=time.getMinutes();
     const ss=time.getSeconds();
 
-    timeEl.innerHTML=hh%12+':'+mm+':'+ss+' '+ampm;
+    timeEl.innerHTML=((clockhh<10)?('0'+clockhh):clockhh)+':'+((mm<10)?('0'+mm):mm)+':'+((ss<10)?('0'+ss):ss)+' '+ampm;
     dateEl.innerHTML=days[day]+', '+mon+'<span class="circle">'+date+'</span>';
-    secondEl.style.transform=`translateX(-50%) rotate(${scale(ss,0,59,-180,180)}deg)`;
-    minuteEl.style.transform=`translateX(-50%) rotate(${scale(mm+ss/60.0,0,59,-180,180)}deg)`;
-    hourEl.style.transform=`translateX(-50%) rotate(${scale(hh%12+mm/60.0,0,11,-180,180)}deg)`;
+
+    if(ss==59){
+        secondEl.style.transition='none';
+    }else if(ss==1){
+        secondEl.style.transition='all 0.1s ease-in';
+    }
+    if(mm==59){
+        minuteEl.style.transition='none';
+    }else if(ss==1){
+        minuteEl.style.transition='all 0.1s ease-in';
+    }
+    if(hh==11){
+        hourEl.style.transition='none';
+    }else if(hh==1){
+        hourEl.style.transition='all 0.1s ease-in';
+    }
+
+    secondEl.style.transform=`translateX(-50%) rotate(${scale(ss,0,60,-180,180)}deg)`;
+    minuteEl.style.transform=`translateX(-50%) rotate(${scale(mm+ss/60.0,0,60,-180,180)}deg)`;
+    hourEl.style.transform=`translateX(-50%) rotate(${scale(hh%12+mm/60.0,0,12,-180,180)}deg)`;
 }
 function scale(num, in_min, in_max, out_min, out_max){
     return (num-in_min)/(in_max-in_min)*(out_max-out_min)+out_min;
