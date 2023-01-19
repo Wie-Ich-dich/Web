@@ -5,15 +5,25 @@
     --primary-color:#000;
     --secondary-color:#fff;
 }
+html.dark {
+    --primary-color:#fff;
+    --secondary-color:#333;
+
+}
+html.dark {
+    background-color: #111;
+    color: var(--primary-color);
+}
 
 body {
-    margin: 0;
+    margin: 0px;
     height: 100vh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
 }
 
 .toggle {
@@ -23,6 +33,7 @@ body {
     padding: 8px 12px;
     border: 0px;
     border-radius: 4px;
+    margin-bottom: 20px;
 }
 .toggle:focus {
     outline: none;
@@ -43,7 +54,7 @@ body {
 
 .needle {
     background-color: var(--primary-color);
-    height: 65px;
+    height: 50px;
     width: 3px;
     border-radius: 1px;
     position: absolute;
@@ -51,7 +62,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     transform-origin: center top;
-    transition: all 0.5s ease-in;
+    transition: all 0.1s ease-in;
 }
 
 .needle.hour {
@@ -59,11 +70,11 @@ body {
 }
 .needle.minute {
     transform: rotate(90deg);
-    height: 100px;
+    height: 75px;
 }
 .needle.second {
     transform: rotate(45deg);
-    height: 100px;
+    height: 95px;
     background-color: #e74c3c;
 }
 .center-point {
