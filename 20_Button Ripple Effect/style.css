@@ -1,0 +1,44 @@
+* {
+    box-sizing: content-box;
+}
+body {
+    background-color: #000;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.btn {
+    position: relative;
+    padding: 20px 30px;
+    font-size: 14px;
+    background-color: purple;
+    color: #fff;
+    text-transform: uppercase;
+    border: 1px solid purple;
+    letter-spacing: 2px;
+    margin: 10px 0px;
+    overflow: hidden;
+}
+.btn:focus {
+    outline: none;
+}
+
+.btn .circle {
+    position: absolute;
+    background-color: #fff;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    animation: scale 0.5s ease-out;
+}
+@keyframes scale{
+    to{
+        transform: translate(-50%,-50%) scale(3);
+        opacity: 0;
+    }
+}
