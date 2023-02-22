@@ -26,3 +26,5 @@ function writeText(){
 
 speedEl.addEventListener('input',(e)=>{speed=300/e.target.value;})
 inputText.addEventListener('keydown',(e)=>{if(e.key==='Enter'){text=e.target.value;e.target.value='';}})
+inputText.onmouseover=(e)=>{e.target.classList.remove('fold');e.target.classList.add('hover');e.target.focus();};
+inputText.onmouseleave=(e)=>{e.target.classList.remove('hover');e.target.classList.add('fold');e.target.blur();};
